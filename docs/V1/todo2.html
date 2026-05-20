@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,11 +16,34 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --bg: #081225;
+      --card: #13213a;
+      --cardBorder: rgba(255, 255, 255, 0.08);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --primary: #38bdf8;
+      --button: #2563eb;
+      --buttonHover: #1d4ed8;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
+
+      background:
+        radial-gradient(circle at top,
+          rgba(56, 189, 248, 0.08),
+          transparent 30%),
+        var(--bg);
+
+      color: var(--text);
+
       padding: 40px;
+
       line-height: 1.7;
     }
 
@@ -28,174 +52,294 @@
       margin: auto;
     }
 
-    h1 {
-      font-size: 64px;
-      margin-bottom: 20px;
-      background: linear-gradient(to right, #38bdf8, #818cf8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    h2 {
-      margin-top: 60px;
-      margin-bottom: 18px;
-      font-size: 32px;
-      color: #f8fafc;
-    }
-
-    h3 {
-      margin-top: 30px;
-      margin-bottom: 10px;
-      color: #38bdf8;
-      font-size: 24px;
-    }
-
-    p {
-      color: #cbd5e1;
-      margin-bottom: 12px;
-      font-size: 17px;
-    }
+    /* HERO */
 
     .hero {
-      margin-bottom: 50px;
+      margin-bottom: 70px;
+    }
+
+    h1 {
+      font-size: 72px;
+      margin-bottom: 24px;
+
+      color: #38bdf8;
+
+      font-weight: 800;
+
+      letter-spacing: -2px;
     }
 
     .hero p {
-      max-width: 700px;
-      font-size: 18px;
+      max-width: 760px;
+
+      color: var(--muted);
+
+      font-size: 19px;
+
       line-height: 1.9;
     }
+
+    /* NAVIGATION */
+
+    .navContainer {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 14px;
+
+      margin-top: 35px;
+    }
+
+    .navItem {
+      background: rgba(255, 255, 255, 0.05);
+
+      border: 1px solid rgba(255, 255, 255, 0.08);
+
+      color: #dbeafe;
+
+      padding: 12px 22px;
+
+      border-radius: 999px;
+
+      font-size: 15px;
+
+      text-decoration: none;
+
+      transition: 0.2s;
+    }
+
+    .navItem:hover {
+      background: rgba(56, 189, 248, 0.12);
+
+      border-color: rgba(56, 189, 248, 0.25);
+
+      transform: translateY(-2px);
+    }
+
+    /* HEADINGS */
+
+    h2 {
+      margin-top: 80px;
+      margin-bottom: 22px;
+
+      font-size: 40px;
+
+      font-weight: 700;
+    }
+
+    h3 {
+      margin-bottom: 12px;
+
+      color: #7dd3fc;
+
+      font-size: 25px;
+    }
+
+    p {
+      color: var(--muted);
+
+      margin-bottom: 15px;
+
+      font-size: 17px;
+    }
+
+    /* CODE BLOCK */
 
     .codeBlock {
       position: relative;
 
-      background: #1e293b;
+      background: var(--card);
 
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--cardBorder);
 
-      border-radius: 14px;
+      border-radius: 18px;
 
-      padding: 24px;
+      padding: 26px;
 
-      margin-top: 15px;
-      margin-bottom: 25px;
-
-      overflow: hidden;
-    }
-
-    .codeBlock::before {
-      content: "";
-
-      position: absolute;
-
-      top: 0;
-      left: 0;
-
-      width: 100%;
-      height: 3px;
-
-      background: linear-gradient(to right, #38bdf8, #818cf8);
+      margin-top: 18px;
+      margin-bottom: 28px;
     }
 
     pre {
       overflow-x: auto;
-      padding-right: 90px;
+      padding-right: 110px;
     }
 
     code {
-      color: #38bdf8;
+      color: #7dd3fc;
+
       font-size: 18px;
+
+      font-family: Consolas, monospace;
     }
+
+    /* COPY BUTTON */
 
     .copyBtn {
       position: absolute;
 
-      top: 16px;
-      right: 16px;
+      top: 50%;
+      right: 18px;
 
-      padding: 8px 14px;
+      transform: translateY(-50%);
 
       border: none;
-      border-radius: 8px;
 
-      cursor: pointer;
-
-      background: linear-gradient(to right, #38bdf8, #818cf8);
+      background: var(--button);
 
       color: white;
 
-      font-weight: bold;
+      padding: 10px 18px;
+
+      border-radius: 10px;
+
+      font-weight: 600;
+
+      cursor: pointer;
 
       transition: 0.2s;
     }
 
     .copyBtn:hover {
-      transform: scale(1.05);
+      background: var(--buttonHover);
     }
+
+    /* STEP CARD */
+
+    .stepCard {
+      background: rgba(255, 255, 255, 0.03);
+
+      border: 1px solid rgba(255, 255, 255, 0.08);
+
+      border-radius: 24px;
+
+      padding: 34px;
+
+      margin-bottom: 30px;
+    }
+
+    /* LIST */
 
     ul {
       margin-left: 20px;
-      margin-top: 15px;
+      margin-top: 18px;
     }
 
     li {
-      margin-bottom: 12px;
-      color: #cbd5e1;
+      margin-bottom: 14px;
+
+      color: var(--muted);
+
       font-size: 17px;
     }
+
+    /* LINKS */
 
     a {
       color: #38bdf8;
       text-decoration: none;
     }
 
-    .stepCard {
-      background: #111827;
-
-      border: 1px solid rgba(255, 255, 255, 0.08);
-
-      border-radius: 18px;
-
-      padding: 28px;
-
-      margin-bottom: 28px;
+    a:hover {
+      text-decoration: underline;
     }
 
+    /* BACK TO TOP */
+
+    .topBtn {
+      position: fixed;
+
+      right: 24px;
+      bottom: 24px;
+
+      width: 54px;
+      height: 54px;
+
+      border-radius: 50%;
+
+      background: #2563eb;
+
+      color: white;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-decoration: none;
+
+      font-size: 22px;
+
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.35);
+
+      transition: 0.2s;
+    }
+
+    .topBtn:hover {
+      transform: translateY(-4px);
+
+      background: #1d4ed8;
+    }
+
+    /* FOOTER */
+
     .footer {
-      margin-top: 80px;
-      padding-top: 25px;
+      margin-top: 90px;
 
       border-top: 1px solid rgba(255, 255, 255, 0.08);
 
-      color: #94a3b8;
+      padding-top: 30px;
 
       text-align: center;
+
+      color: #94a3b8;
     }
 
-    .badgeContainer {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin-top: 25px;
-    }
+    /* MOBILE */
 
-    .badge {
-      background: rgba(255, 255, 255, 0.06);
+    @media (max-width: 768px) {
 
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      body {
+        padding: 24px;
+      }
 
-      padding: 10px 18px;
+      h1 {
+        font-size: 52px;
+      }
 
-      border-radius: 999px;
+      h2 {
+        font-size: 32px;
+      }
 
-      color: #cbd5e1;
+      .copyBtn {
+        position: static;
 
-      font-size: 14px;
+        transform: none;
+
+        margin-top: 18px;
+
+        width: 100%;
+      }
+
+      pre {
+        padding-right: 0;
+      }
+
+      .navContainer {
+        gap: 10px;
+      }
+
+      .navItem {
+        width: 100%;
+        text-align: center;
+      }
     }
   </style>
 </head>
 
-<body>
+<body id="top">
 
   <div class="container">
 
@@ -207,21 +351,31 @@
 
       <p>
         Generate reusable Tailwind frontend architecture instantly.
-        Instead of repeatedly creating folders, layouts, starter
-        files, and boilerplate code manually — the
-        <strong>tailwind-todo</strong> CLI generates everything
-        automatically using a single command.
+        Instead of repeatedly creating folders, layouts,
+        starter files, and boilerplate code manually —
+        the <strong>tailwind-todo</strong> CLI generates
+        everything automatically using a single command.
       </p>
 
-      <div class="badgeContainer">
+      <!-- NAVIGATION -->
 
-        <div class="badge">Frontend Scaffolding</div>
+      <div class="navContainer">
 
-        <div class="badge">Tailwind CSS</div>
+        <a href="#install" class="navItem">
+          Install
+        </a>
 
-        <div class="badge">Reusable Structure</div>
+        <a href="#usage" class="navItem">
+          Use Tailwind
+        </a>
 
-        <div class="badge">CLI Workflow</div>
+        <a href="#features" class="navItem">
+          Features
+        </a>
+
+        <a href="#architecture" class="navItem">
+          Generated Architecture
+        </a>
 
       </div>
 
@@ -229,186 +383,200 @@
 
     <!-- INSTALL -->
 
-    <h2>Install</h2>
+    <section id="install">
 
-    <div class="codeBlock">
-
-      <pre><code id="installCmd">npm install -g tailwind-todo</code></pre>
-
-      <button class="copyBtn" onclick="copyText('installCmd')">
-        Copy
-      </button>
-
-    </div>
-
-    <p>or</p>
-
-    <div class="codeBlock">
-
-      <pre><code id="npxCmd">npx tailwind-todo</code></pre>
-
-      <button class="copyBtn" onclick="copyText('npxCmd')">
-        Copy
-      </button>
-
-    </div>
-
-    <!-- HOW TO USE -->
-
-    <h2>How To Use tailwind-todo</h2>
-
-    <!-- STEP 1 -->
-
-    <div class="stepCard">
-
-      <h3>
-        Step 1 — Create Express Architecture
-      </h3>
-
-      <p>
-        First generate the base project structure using the
-        express-todo CLI.
-      </p>
+      <h2>Install</h2>
 
       <div class="codeBlock">
 
-        <pre><code id="step1Cmd">npx express-todo simple</code></pre>
+        <pre><code id="installCmd">npm install -g tailwind-todo</code></pre>
 
-        <button class="copyBtn" onclick="copyText('step1Cmd')">
+        <button class="copyBtn" onclick="copyText('installCmd')">
           Copy
         </button>
 
       </div>
 
-    </div>
-
-    <!-- STEP 2 -->
-
-    <div class="stepCard">
-
-      <h3>
-        Step 2 — Go To Public Folder
-      </h3>
-
-      <p>
-        After generating the project structure,
-        navigate into the Public folder.
-      </p>
+      <p>or</p>
 
       <div class="codeBlock">
 
-        <pre><code id="step2Cmd">cd Public</code></pre>
+        <pre><code id="npxCmd">npx tailwind-todo</code></pre>
 
-        <button class="copyBtn" onclick="copyText('step2Cmd')">
+        <button class="copyBtn" onclick="copyText('npxCmd')">
           Copy
         </button>
 
       </div>
 
-    </div>
+    </section>
 
-    <!-- STEP 3 -->
+    <!-- USAGE -->
 
-    <div class="stepCard">
+    <section id="usage">
 
-      <h3>
-        Step 3 — Create V1 Folder Manually
-      </h3>
+      <h2>How To Use tailwind-todo</h2>
 
-      <p>
-        Inside the Public folder,
-        create a new folder named V1 manually.
-      </p>
+      <!-- STEP 1 -->
 
-      <div class="codeBlock">
+      <div class="stepCard">
 
-        <pre><code id="step3Cmd">mkdir V1</code></pre>
+        <h3>
+          Step 1 — Create Express Architecture
+        </h3>
 
-        <button class="copyBtn" onclick="copyText('step3Cmd')">
-          Copy
-        </button>
+        <p>
+          First generate the base project structure using
+          the express-todo CLI.
+        </p>
 
-      </div>
+        <div class="codeBlock">
 
-    </div>
+          <pre><code id="step1Cmd">npx express-todo simple</code></pre>
 
-    <!-- STEP 4 -->
+          <button class="copyBtn" onclick="copyText('step1Cmd')">
+            Copy
+          </button>
 
-    <div class="stepCard">
-
-      <h3>
-        Step 4 — Enter V1 Folder
-      </h3>
-
-      <p>
-        Move into the V1 folder.
-      </p>
-
-      <div class="codeBlock">
-
-        <pre><code id="step4Cmd">cd V1</code></pre>
-
-        <button class="copyBtn" onclick="copyText('step4Cmd')">
-          Copy
-        </button>
+        </div>
 
       </div>
 
-    </div>
+      <!-- STEP 2 -->
 
-    <!-- STEP 5 -->
+      <div class="stepCard">
 
-    <div class="stepCard">
+        <h3>
+          Step 2 — Go To Public Folder
+        </h3>
 
-      <h3>
-        Step 5 — Execute tailwind-todo
-      </h3>
+        <p>
+          After generating the project structure,
+          navigate into the Public folder.
+        </p>
 
-      <p>
-        Now run the Tailwind frontend generator command.
-      </p>
+        <div class="codeBlock">
 
-      <div class="codeBlock">
+          <pre><code id="step2Cmd">cd Public</code></pre>
 
-        <pre><code id="step5Cmd">npx tailwind-todo header</code></pre>
+          <button class="copyBtn" onclick="copyText('step2Cmd')">
+            Copy
+          </button>
 
-        <button class="copyBtn" onclick="copyText('step5Cmd')">
-          Copy
-        </button>
+        </div>
 
       </div>
 
-    </div>
+      <!-- STEP 3 -->
+
+      <div class="stepCard">
+
+        <h3>
+          Step 3 — Create V1 Folder Manually
+        </h3>
+
+        <p>
+          Inside the Public folder,
+          create a new folder named V1 manually.
+        </p>
+
+        <div class="codeBlock">
+
+          <pre><code id="step3Cmd">mkdir V1</code></pre>
+
+          <button class="copyBtn" onclick="copyText('step3Cmd')">
+            Copy
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- STEP 4 -->
+
+      <div class="stepCard">
+
+        <h3>
+          Step 4 — Enter V1 Folder
+        </h3>
+
+        <p>
+          Move into the V1 folder.
+        </p>
+
+        <div class="codeBlock">
+
+          <pre><code id="step4Cmd">cd V1</code></pre>
+
+          <button class="copyBtn" onclick="copyText('step4Cmd')">
+            Copy
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- STEP 5 -->
+
+      <div class="stepCard">
+
+        <h3>
+          Step 5 — Execute tailwind-todo
+        </h3>
+
+        <p>
+          Now run the Tailwind frontend generator command.
+        </p>
+
+        <div class="codeBlock">
+
+          <pre><code id="step5Cmd">npx tailwind-todo header</code></pre>
+
+          <button class="copyBtn" onclick="copyText('step5Cmd')">
+            Copy
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
 
     <!-- FEATURES -->
 
-    <h2>Features</h2>
+    <section id="features">
 
-    <ul>
+      <h2>Features</h2>
 
-      <li>Tailwind starter setup</li>
+      <ul>
 
-      <li>Boilerplate frontend generation</li>
+        <li>Tailwind starter setup</li>
 
-      <li>Reusable responsive structure</li>
+        <li>Boilerplate frontend generation</li>
 
-      <li>CLI based workflow</li>
+        <li>Reusable responsive structure</li>
 
-      <li>Fast frontend scaffolding</li>
+        <li>CLI based workflow</li>
 
-      <li>Editable generated architecture</li>
+        <li>Fast frontend scaffolding</li>
 
-      <li>Simple folder structure</li>
+        <li>Editable generated architecture</li>
 
-    </ul>
+        <li>Simple folder structure</li>
+
+      </ul>
+
+    </section>
 
     <!-- GENERATED STRUCTURE -->
 
-    <h2>Generated Architecture</h2>
+    <section id="architecture">
 
-    <div class="codeBlock">
+      <h2>Generated Architecture</h2>
 
-      <pre>
+      <div class="codeBlock">
+
+        <pre>
 <code id="structureCmd">Public/
 │
 └── V1/
@@ -430,11 +598,13 @@
         │
         └── start.js</code></pre>
 
-      <button class="copyBtn" onclick="copyText('structureCmd')">
-        Copy
-      </button>
+        <button class="copyBtn" onclick="copyText('structureCmd')">
+          Copy
+        </button>
 
-    </div>
+      </div>
+
+    </section>
 
     <!-- GITHUB -->
 
@@ -454,6 +624,12 @@
 
   </div>
 
+  <!-- BACK TO TOP -->
+
+  <a href="#top" class="topBtn">
+    ↑
+  </a>
+
   <script>
 
     const copyText = (id) => {
@@ -462,7 +638,15 @@
         document.getElementById(id).innerText
       );
 
-      alert("Copied!");
+      const button = event.target;
+
+      const originalText = button.innerText;
+
+      button.innerText = "Copied";
+
+      setTimeout(() => {
+        button.innerText = originalText;
+      }, 1200);
     };
 
   </script>
@@ -470,3 +654,4 @@
 </body>
 
 </html>
+```
