@@ -30,7 +30,7 @@
   "homepage": "https://cli.keshavsoft.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/keshavsoft/tailwind-todo"
+    "url": "git+https://github.com/keshavsoft/tailwind-todo.git"
   },
   "bugs": {
     "url": "https://github.com/keshavsoft/tailwind-todo/issues"
