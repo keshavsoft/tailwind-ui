@@ -22,18 +22,18 @@ export default function showUsage(version) {
     const r = "\x1b[0m";
 
     console.log(`
-${c}🚀 tailwind-ui v${version}${r}
+${c}🚀 tailwind-todo v${version}${r}
 
 ${y}Usage:${r}
-  ${g}npx tailwind-ui${r} <command> [options]
+  ${g}npx tailwind-todo${r} <command> [options]
 
 ${y}Commands:${r}
   ${g}header${r}              a simple header
 
 ${y}Examples:${r}
-  ${gray}npx tailwind-ui header${r}
+  ${gray}npx tailwind-todo header${r}
 
 ${y}Tip:${r}
-  ${gray}npm i -g tailwind-ui${r}
+  ${gray}npm i -g tailwind-todo${r}
 `);
 }
