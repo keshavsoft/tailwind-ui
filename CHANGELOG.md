@@ -29,3 +29,9 @@ The format is based on Keep a Changelog.
 
 ### Added
 - folder not created
+
+## [1.4.2] - 2026-05-21
+
+### Added
+- full header dynamic
+
