@@ -1,8 +1,6 @@
 import fs from "fs";
 
-export default function resolveFolderName({ name, inType = "basic" }) {
-    const defaultFolerName = "Index";
-
+export default function resolveFolderName({ name, defaultFolerName = "headerV1" }) {
     // case 1: force new → timestamp
     if (name === null) {
         name = defaultFolerName;
