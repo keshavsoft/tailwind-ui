@@ -1,6 +1,6 @@
 {
   "name": "tailwind-todo",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "description": "CLI to scaffold projects using templates",
   "keywords": [
     "tailwind",
@@ -13,7 +13,14 @@
     "template",
     "cli"
   ],
-  "dependencies": {},
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^8.0.14"
+  },
   "type": "module",
   "exports": {
     ".": "./index.js"
