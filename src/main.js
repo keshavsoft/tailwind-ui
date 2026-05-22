@@ -2,7 +2,7 @@
 
 (async () => {
     window.KSHeaderVersion = "v5";
-    window.KSHeaderTemplateVersion = "v1";
+    window.KSHeaderTemplateVersion = "v4";
 
     const module = await import(
         `../bin/${window.KSHeaderVersion}/commands/header/template/${window.KSHeaderTemplateVersion}/initHeader.js`
