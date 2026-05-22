@@ -35,3 +35,8 @@ The format is based on Keep a Changelog.
 ### Added
 - full header dynamic
 
+## [1.5.5] - 2026-05-22
+
+### Added
+- vite perfect
+
