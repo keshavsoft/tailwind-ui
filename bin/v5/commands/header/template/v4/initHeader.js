@@ -1,7 +1,7 @@
 import { buildMenuItem } from "./BuildMenuItem/buildMenuItem.js";
 import { buildNav } from "./BuildNav/buildNav.js";
 
-export const initHeader = (config = {}) => {
+const initHeader = (config = {}) => {
 
     const header = document.getElementById("header");
 
@@ -45,3 +45,5 @@ export const initHeader = (config = {}) => {
         menu.appendChild(li);
     });
 };
+
+export default initHeader;

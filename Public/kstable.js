@@ -3,7 +3,7 @@
     md:mt-0 md:w-auto md:flex-wrap`,e}})),O,k=t((()=>{O=()=>{let e=document.createElement(`nav`);e.className=`bg-gray-800 text-white`;let t=document.createElement(`div`);t.className=`mx-auto px-3 py-3
     max-w-3xl
     lg:max-w-5xl
-    xl:max-w-full xl:px-10`;let n=document.createElement(`div`);return n.className=`flex flex-wrap items-center justify-between`,t.appendChild(n),e.appendChild(t),{nav:e,innerDiv:n}}})),A,j=t((()=>{C(),T(),D(),k(),A=(e={})=>{let{nav:t,innerDiv:n}=O();return n.appendChild(S({inHeading:e.text,inHtmlId:e.htmlId})),n.appendChild(w()),n.appendChild(E()),t}})),M=n({initHeader:()=>N}),N,P=t((()=>{x(),j(),N=(e={})=>{let t=document.getElementById(`header`);if(!t)return;t.appendChild(A(e.title));let n=document.getElementById(`menu`),r={liClass:`md:text-center`,aClass:`flex justify-between items-center
+    xl:max-w-full xl:px-10`;let n=document.createElement(`div`);return n.className=`flex flex-wrap items-center justify-between`,t.appendChild(n),e.appendChild(t),{nav:e,innerDiv:n}}})),A,j=t((()=>{C(),T(),D(),k(),A=(e={})=>{let{nav:t,innerDiv:n}=O();return n.appendChild(S({inHeading:e.text,inHtmlId:e.htmlId})),n.appendChild(w()),n.appendChild(E()),t}})),M=n({default:()=>N}),N,P=t((()=>{x(),j(),N=(e={})=>{let t=document.getElementById(`header`);if(!t)return;t.appendChild(A(e.title));let n=document.getElementById(`menu`),r={liClass:`md:text-center`,aClass:`flex justify-between items-center
         bg-gray-700 px-4 py-2 rounded-md
         hover:bg-gray-600
         active:bg-gray-500 active:scale-95
