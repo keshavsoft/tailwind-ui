@@ -1,6 +1,6 @@
 {
   "name": "tailwind-todo",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "description": "CLI to scaffold projects using templates",
   "keywords": [
     "tailwind",
