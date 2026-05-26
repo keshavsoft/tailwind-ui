@@ -1,12 +1,7 @@
-// src/main.js
+import { initShowTable } from "../bin/table/v2/commands/table/template/v1/entry.js";
 
 (async () => {
-    window.KSTableVersion = "v1";
-    window.KSHeaderTemplateVersion = "v1";
 
-    const module = await import(
-        `../bin/table/${window.KSTableVersion}/commands/table/template/${window.KSHeaderTemplateVersion}/entry.js`
-    );
+    window.KSTable = initShowTable;
 
-    window.KSTable = module.default;
 })();
