@@ -24,17 +24,20 @@ export default function showUsage(version) {
     const r = "\x1b[0m";
 
     console.log(`
-${c}🚀 tailwind-todo   v${version}${r}
+${c}🚀 json-crud-ui-components v${version}${r}
 
 ${y}Usage:${r}
-  ${g}npx tailwind-todo  ${r} <command>
+  ${g}npx json-crud-ui-components${r} <command>
 
 ${y}Commands:${r}
-  ${g}Header${r}      Builds header structure
-  
+  ${g}init${r}             Creates initial boilerplate structure
+  ${g}addListeners${r}     Adds listeners boilerplate
+  ${g}buildHeader${r}      Builds header structure
+  ${g}htmlIdClick${r}      Adds htmlIdClick handler
 
 ${y}Examples:${r}
-  ${gray}npx tailwind-todo   header${r}
+  ${gray}npx json-crud-ui-components init${r}
+  ${gray}npx json-crud-ui-components addListeners${r}
 
 ${y}Architecture:${r}
   ${gray}commands are auto-loaded dynamically${r}
