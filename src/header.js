@@ -5,7 +5,7 @@
     window.KSHeaderTemplateVersion = "v1";
 
     const module = await import(
-        `../bin/header/${window.KSTableVersion}/commands/header/template/${window.KSHeaderTemplateVersion}/entry.js`
+        `../bin/header/${window.KSTableVersion}/commands/header/template/${window.KSHeaderTemplateVersion}/initHeader.js`
     );
 
     window.KSHeader = module.default;
