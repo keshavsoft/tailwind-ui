@@ -5,6 +5,7 @@ export const createColumnStore = () => {
     let visibleColumns = [];
     let visibleColumnsConfig = [];
     let dataListColumns = [];
+    let searchableColumnsConfig = [];
 
     return {
         setColumns: (inColumns) => {
@@ -12,14 +13,19 @@ export const createColumnStore = () => {
         },
         setVisibleColumns: (inVisibleColumns) => {
             visibleColumns = inVisibleColumns;
-        }, setVisibleConfig: (inVisibleConfig) => {
+        },
+        setVisibleConfig: (inVisibleConfig) => {
             visibleColumnsConfig = inVisibleConfig;
+        },
+        setSearchableColumnsConfig: (inColumns) => {
+            searchableColumnsConfig = inColumns;
         },
         getColumns: () => keys,
         getVisibleColumns: () => visibleColumns,
         getVisibleColumnsConfig: () => visibleColumnsConfig,
         setDataListColumns: (d) => { dataListColumns = d; },
         getDataListColumns: () => dataListColumns,
+        getSearchableColumnsConfig: () => searchableColumnsConfig
     };
 };
 

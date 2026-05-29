@@ -16,6 +16,9 @@ import { setupServices } from "./Services/setupServices.js";
 import { mountTableUI } from "./UI/mountTableUI.js";
 import { mountVerticalUI } from "./UI/mountVertical.js";
 import { mountTableOnlyUI } from "./UI/mountTableOnly.js";
+import mountShowTableUI from "./UI/mountShowTable.js";
+import mountCreate from "./UI/mountCreate.js";
+import mountTableWithFooter from "./UI/mountTableWithFooter.js";
 
 class KSAiTable {
     constructor(inConfig) {
@@ -39,7 +42,6 @@ class KSAiTable {
         this.uiClasses = this.mergeUI(KeshavUIClasses, uiClasses);
 
         const bundle = prepareColumnsBundle(columnsConfig);
-        // console.log("aaaaa : ", bundle.dataListColumns);
 
         this.dataStore.setColumns(bundle.keys);
         this.dataStore.setVisibleColumns(bundle.visibleColumns);
@@ -47,6 +49,7 @@ class KSAiTable {
         this.dataStore.setDefaultRow(bundle.defaultRow);
         this.dataStore.setDataListColumns(bundle.dataListColumns);
         this.dataStore.setToSaveRow(bundle.toSaveRow);
+        this.dataStore.setSearchableColumnsConfig(bundle.searchableColumnsConfig);
 
         this.options = options;
         this.endPoints = endPoints;
@@ -110,6 +113,31 @@ class KSAiTable {
         this.mountTableOnly();
     };
 
+    async initShowTable() {
+        this.setupServices();
+
+        await loadDataFlow({
+            config: this.config,
+            services: this.services,
+            dataStore: this.dataStore,
+            endPoints: this.endPoints
+        });
+
+        mountShowTableUI({
+            containerEl: this.containerEl,
+            dataStore: this.dataStore,
+            dom: this.dom,
+            services: this.services,
+            options: this.options,
+            endPoints: this.endPoints,
+            columnsConfig: this.columnsConfig,
+            uiClasses: this.uiClasses,
+            callbacks: this.callbacks,
+            inConfig: this.config,
+            inShowFooter: true
+        });
+    };
+
     setupServices() {
         this.services = setupServices({
             config: this.config,
@@ -158,6 +186,56 @@ class KSAiTable {
             uiClasses: this.uiClasses,
             callbacks: this.callbacks,
             inConfig: this.config,
+        });
+    };
+
+    async initCreate() {
+        this.setupServices();
+
+        await loadDataFlow({
+            config: this.config,
+            services: this.services,
+            dataStore: this.dataStore,
+            endPoints: this.endPoints
+        });
+
+        mountCreate({
+            containerEl: this.containerEl,
+            dataStore: this.dataStore,
+            dom: this.dom,
+            services: this.services,
+            options: this.options,
+            endPoints: this.endPoints,
+            columnsConfig: this.columnsConfig,
+            uiClasses: this.uiClasses,
+            callbacks: this.callbacks,
+            inConfig: this.config,
+            inShowFooter: true
+        });
+    };
+
+    async initTableWithFooter() {
+        this.setupServices();
+
+        await loadDataFlow({
+            config: this.config,
+            services: this.services,
+            dataStore: this.dataStore,
+            endPoints: this.endPoints
+        });
+
+        mountTableWithFooter({
+            containerEl: this.containerEl,
+            dataStore: this.dataStore,
+            dom: this.dom,
+            services: this.services,
+            options: this.options,
+            endPoints: this.endPoints,
+            columnsConfig: this.columnsConfig,
+            uiClasses: this.uiClasses,
+            callbacks: this.callbacks,
+            inConfig: this.config,
+            inShowFooter: true
         });
     };
 };

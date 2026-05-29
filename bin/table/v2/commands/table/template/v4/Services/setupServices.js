@@ -1,6 +1,7 @@
 // /Services/setupServices.js
 
-import { createServices } from "./createServices.js";
+// import { createServices } from "./createServices.js";
+import { createServices } from "./V1/createServices.js";
 
 export const setupServices = ({ config, dataStore }) => {
     const { tableName } = config;

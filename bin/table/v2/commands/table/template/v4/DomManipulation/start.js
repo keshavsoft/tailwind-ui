@@ -5,7 +5,7 @@ export const getDomManipulation = () => {
     };
 
     const getTableFooter = (tableContainer) => {
-        return tableContainer.querySelector(".tFootClass");
+        return tableContainer.querySelector(".tfootClass");
     };
 
     const getTableBody = (tableContainer) => {

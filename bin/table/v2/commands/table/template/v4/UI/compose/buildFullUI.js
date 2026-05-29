@@ -1,29 +1,27 @@
 import { buildHeaderRow } from "../builders/buildHeaderRow.js";
 import { buildDataListContainer } from "../builders/buildDataListContainer.js";
-import { buildTableShell } from "../builders/buildTableShell.js";
+// import { buildTableShell } from "../builders/buildTableShell.js";
 
-export const buildFullUI1 = ({ containerEl, inTableName, inIsDataListNeeded = true }) => {
-    const root = containerEl;
-    root.className = "max-w-6xl mx-auto p-2";
+import buildTableShell from "../BuilderVersions/V1/buildTableShell.js";
 
-    const { header } = buildHeaderRow({ inTitleText: inTableName });
-    const { container: dataList } = buildDataListContainer();
-    const { wrapper } = buildTableShell();
+export const buildFullUI = ({ containerEl, inTableName, inIsDataListNeeded = true,
+    inIsTableNeeded = true, inIsShowHeaderRow = false,
+    inUiClasses }) => {
 
-    root.replaceChildren(header, wrapper, dataList);
-};
-
-export const buildFullUI = ({ containerEl, inTableName, inIsDataListNeeded = true, inIsTableNeeded = true }) => {
     const root = containerEl;
     root.className = "max-w-6xl mx-auto p-2";
 
     let children = [];
 
-    if (inIsTableNeeded) {
+    if (inIsShowHeaderRow) {
         const { header } = buildHeaderRow({ inTitleText: inTableName });
-        const { wrapper } = buildTableShell();
 
         children.push(header);
+    };
+
+    if (inIsTableNeeded) {
+        const { wrapper } = buildTableShell({ inTableClassName: inUiClasses?.table?.tableClass });
+
         children.push(wrapper);
     };
 

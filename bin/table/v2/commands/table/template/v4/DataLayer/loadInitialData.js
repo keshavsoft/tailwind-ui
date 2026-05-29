@@ -16,7 +16,7 @@ const loadInitialData = async ({
         dataStore.setData(data);
         return;
     }
-
+    // debugger
     // 2. Read API
     if (endPoints?.read) {
         const dataFromFetch = await services.actions.getData({
@@ -25,11 +25,11 @@ const loadInitialData = async ({
 
         if (!Array.isArray(dataFromFetch)) {
             throw new Error("read endpoint must return array");
-        }
+        };
 
         dataStore.setData(dataFromFetch);
-    }
-// debugger;
+    };
+    // debugger;
     // 3. Find API (dynamic id)
     if (endPoints?.find) {
         const id = getIdFromUrl();
@@ -41,8 +41,29 @@ const loadInitialData = async ({
             });
 
             dataStore.setFindData(dataFromFetch);
+        };
+    };
+
+    if (endPoints?.filter) {
+        const id = getIdFromUrl();
+
+        if (id) {
+            const dataFromFetch = await services.actions.find({
+                inEndPoint: endPoints.find,
+                id
+            });
+
+            dataStore.setFindData(dataFromFetch);
         }
-    }
+    };
+
+    if (endPoints.findFromParams) {
+        const dataFromFetch = await services.actions.findFromParams({
+            inEndPoint: endPoints.findFromParams
+        });
+
+        dataStore.setFindFromParams(dataFromFetch);
+    };
 };
 
 export { loadInitialData };

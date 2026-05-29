@@ -3,7 +3,7 @@ export const buildTableShell = () => {
     wrapper.className = "rounded-b-lg shadow-md overflow-x-auto tableParent";
 
     const table = document.createElement("table");
-    table.className = "table w-full bg-white";
+    table.className = "table bg-white table-fixed w-[1000px]";
 
     const thead = document.createElement("thead");
     thead.className = "theadClass";

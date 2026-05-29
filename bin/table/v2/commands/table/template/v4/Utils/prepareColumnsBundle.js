@@ -24,12 +24,16 @@ export const prepareColumnsBundle = (columnsConfig = []) => {
     const dataListColumns = visibleConfig
         .filter(c => c.tableFooterDataListShow);
 
+    const searchableColumnsConfig = columnsConfig
+        .filter(c => c.isSearchable)
+
     return {
         keys,
         visibleColumns,
         visibleConfig,
         defaultRow,
         dataListColumns,
-        toSaveRow
+        toSaveRow,
+        searchableColumnsConfig
     };
 };
